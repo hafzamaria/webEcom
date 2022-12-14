@@ -57,25 +57,29 @@ const Navbar = () => {
     }
     .mobile-navbar-btn {
       display: none;
+      background-color:transparent;
+      cursor: pointer;
+      border:none;
 
-      .close-outline {
-        display: none;
-        margin-top: -13rem;
-      }
     }
 
-    .mobile-navbar-btn[name="close-outline"] {
+    .mobile-nav-icon[name="close-outline"] {
       display: none;
+    }
+    
+    .close-outline {
+      display: none;
+      
     }
 
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       .mobile-navbar-btn {
         display: inline-block;
-        z-index: 999;
+        z-index: 9999;
         border: ${({ theme }) => theme.colors.black};
 
         .mobile-nav-icon {
-          font-size: 4.2rem;
+          font-size: 4rem;
           color: ${({ theme }) => theme.colors.black};
         }
       }
@@ -92,7 +96,10 @@ const Navbar = () => {
         justify-content: center;
         align-items: center;
         text-align: center;
+        visibility: hidden;
+        opacity: 0;
         transform: translateX(100%);
+        transition: all 3s linear;
 
         li {
           &.navbar-link {
@@ -125,8 +132,14 @@ const Navbar = () => {
       .active .navbar-list {
         visibility: visible;
         opacity: 1;
+        transform-origin:right;
+        transition: all 3s linear;
         transform: translateX(0);
         z-index: 999;
+        
+        .navbar-link{
+          font-size:4rem;
+        }
       }
     }
   `;
@@ -186,7 +199,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        {/* mobile-navbar-button */}
+        {/* mobile-navbar-button buttons for open & close menu*/ }
         <div className="mobile-navbar-btn">
           <CgMenu
             name="menu-outline"
