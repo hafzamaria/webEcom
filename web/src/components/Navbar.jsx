@@ -2,15 +2,38 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgClose } from "react-icons/cg"; ////in react-icons go to css.gg last mai hai menu mai
+import {FiShoppingCart} from "react-icons/fi";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false); /////for mob menu
   
         
   const Nav = styled.nav`
+  .cart-trolley--link{
+    position: relative;
+
+    .cart-trolley{
+      position: relative;
+      font-size:3.2rem;
+    }
+
+    .cart-total--item{
+      width:2.4rem;
+      height:2.4rem;
+      position: absolute;
+      background-color:#000;
+      color:#000;
+      border-radius:50%;
+      display: grid;
+      place-items: center;
+      top: -20%;
+      left:70%;
+      background-color: ${({ theme }) => theme.colors.helper};
+    }
+  }
     .navbar-list {
       display: flex;
       gap: 4.8rem;
-
+      align-items:center;
       li {
         list-style: none;
 
@@ -125,11 +148,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navbar-link" to="/About"
-              onClick={() => setOpenMenu(!openMenu)}
-              ClassName="active">
-              About
-            </NavLink>
+            <NavLink 
+            className="navbar-link" 
+            to="/About"
+            onClick={() => setOpenMenu(!openMenu)}
+            ClassName="active">About</NavLink>
           </li>
           <li>
             <NavLink className="navbar-link" to="/Services"
@@ -155,10 +178,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="navbar-link" to="/Cart"
+            <NavLink className="navbar-link cart-trolley--link" to="/Cart"
             onClick={() => setOpenMenu(!openMenu)}
             ClassName="active">
-              Cart
+              <FiShoppingCart className="cart-trolley "/> 
+              <span className="cart-total--item">10</span>
             </NavLink>
           </li>
         </ul>

@@ -1,0 +1,10 @@
+1:npm install
+2:npm i react-router-dom
+3:npm i styled components from npm react-router-dom(search(styled components))https://www.npmjs.com/package/styled-components
+
+
+
+
+
+
+(navLink)////page refresh kiye bagair dosre page pe jane k liye use hota h,ye hame react-router-dom provide krta h
