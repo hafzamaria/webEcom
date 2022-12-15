@@ -22,8 +22,8 @@ const AppProvider = ({ children }) => {
     return dispatch({
       type: "HOME_UPDATE",
       payload: {
-        name: "Hafza Maria",
-        image: "./image/hero1.jpg",
+        name: "Maria Store",
+        image: "./image/shop.jpg",
       },
     });
   };
@@ -31,8 +31,8 @@ const AppProvider = ({ children }) => {
     return dispatch({
       type: "ABOUT_UPDATE",
       payload: {
-        name: "Sumama Imran",
-        image: "./image/about1.jpg",
+        name: "Maria Ecommerce",
+        image: "./image/shopping.jpg",
       },
     });
   };

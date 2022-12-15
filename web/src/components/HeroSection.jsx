@@ -16,20 +16,20 @@ const HeroSection = () => {
       <Wrapper>
         <div className="container grid grid-two-coloumn">
           <div className="section-hero-data">
-            <p className="hero-top-data">THIS IS ME</p>
+            <p className="hero-top-data">Welcome to</p>
             <h1 className="hero-heading">{name}</h1>
             <p className="hero-para">
-              I am {name}.A Full Stack Developer,YouTuber and Freelancer. A Full
-              Stack Developer,YouTuber and Freelancer.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus itaque saepe nostrum neque, et est nihil commodi? Error nostrum eaque eveniet doloribus,
+               sequi quam rem accusantium odio placeat deserunt? Ratione.
             </p>
             <Button className="btn hireme-btn">
-              <NavLink to="/Contact">hire me</NavLink>
+              <NavLink to="/Products">SHOP NOW</NavLink>
             </Button>
           </div>
-          <div className="section-hero-image">
-            <picture>
-              <img src={image} alt="" className="hero-img" />
-            </picture>
+          <div className="hero-section-image">
+            <figure>
+              <img src={image} alt="" className="img-style" />
+            </figure>
           </div>
         </div>
       </Wrapper>
@@ -37,42 +37,75 @@ const HeroSection = () => {
   );
 };
 const Wrapper = styled.section`
-  padding: 9rem 0;
-
-  .section-hero-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+padding: 12rem 0;
+.container{
+  max-width: 80rem;
+    gap: 5rem
+}
+p{
+  font-size:1.25rem;
+}
+img {
+  
+  height: 10rem;
+}
+.hero-section-data {
+  p {
+    margin: 2rem 0;
   }
-  .btn {
-    max-width: 16rem;
+  h1 {
+    text-transform: capitalize;
+    font-weight: bold;
   }
-  .hero-top-data {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: ${({ theme }) => theme.colors.helper};
+  .intro-data {
+    margin-bottom: 0;
   }
-  .hero-heading {
-    text-transform: uppercase;
-    font-size: 4.5rem;
+}
+.btn{
+  margin-top: 2rem;
+}
+.hero-heading{
+  font-size:4rem;
+}
+.hero-section-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure {
+  position: relative;
+  &::after {
+    content: "";
+    width: 60%;
+    height: 80%;
+    background-color: rgba(81, 56, 238, 0.4);
+    position: absolute;
+    left: 50%;
+    top: -5rem;
+    z-index: -1;
   }
-  .hero-para {
-    margin-top: 1.5rem;
-    margin-bottom: 3.4rem;
-    max-width: 60rem;
-    font-size: 1.3rem;
-  }
-  .section-hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  picture {
-    text-align: center;
-  }
-  .hero-img {
-    max-width: 100%;
+}
+.img-style {
+  width: 100%;
+  height: auto;
+  width: 360px;
+}
+  
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .grid {
+      gap: 10rem;
+    }
+    figure::after {
+      content: "";
+      width: 50%;
+      height: 100%;
+      left: 0;
+      top: 10%;
+      
+      background-color: rgba(81, 56, 238, 0.4);
+    }
   }
 `;
 
