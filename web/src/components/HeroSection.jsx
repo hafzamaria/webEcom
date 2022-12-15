@@ -94,8 +94,10 @@ figure {
 }
   
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    
     .grid {
       gap: 10rem;
+      margin-top:-7rem;
     }
     figure::after {
       content: "";

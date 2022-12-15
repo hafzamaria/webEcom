@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import { useGlobalContext } from "./Context";
-
-
+import Serve from "./components/Serve";
+import Trusted from "./components/Trusted";
 const Home = () => {
   // const data={
   //   name:'Hafza Maria',
@@ -16,7 +16,8 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-     
+       <Serve/>
+       <Trusted/>
     </>
   );
 };
