@@ -60,7 +60,7 @@ allowFullScreen=""
         style={{ border: 0 }}
         allowFullScreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
       {/* ////////form (formspree)go to + sign=>new form=> name the form then creat,tn copy url n paste it into form action */}
       <div className="container">
@@ -76,6 +76,7 @@ allowFullScreen=""
               placeholder="username"
               autoComplete="off"
               required
+             
             />
 
             <input
@@ -84,6 +85,7 @@ allowFullScreen=""
               placeholder="Email"
               autoComplete="off"
               required
+             
             />
 
             <textarea

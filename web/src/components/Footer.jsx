@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <NavLink to="/">
+            <NavLink to="/Contact">
               <Button>Get Started</Button>
             </NavLink>
           </div>
@@ -71,7 +71,8 @@ const Footer = () => {
           {/* 4th column */}
           <div className="footer-contact">
             <h3>Call Us</h3>
-            <h3>+92 3332296495</h3>
+            {/* tel is a keyword for making cal */}
+            <a  href="tel:+923332296495"className="call">+923332296495</a>
           </div>
         </div>
 
@@ -91,7 +92,10 @@ const Footer = () => {
   );
 };
 const Wrapper = styled.section`
-
+.call{
+  font-size:2rem;
+  color:white;
+}
 .footer-container{
   display: flex;
   flex-direction: row;
@@ -162,6 +166,7 @@ footer{
       }
     }
   }
+ 
   .footer-bottom--section{
     padding-top:5rem;
  
