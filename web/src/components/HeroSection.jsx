@@ -1,49 +1,57 @@
-// import React ,{useContext}from 'react'
-import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../Styles/Button";
-// import {AppContext} from '../Context';
-import { useGlobalContext } from "../Context";
 
-const HeroSection = () => {
-  // const firstName = useContext(AppContext) instead of this we call useGlobalContext from Context.jsx
-  //  &also dnt need to import AppContext ans useContext
-  // const firstName = useGlobalContext();
-  const { name, image } = useGlobalContext();
+const HeroSection = ({myData}) => {
+ 
+  const {name ,image} = myData;
+
   return (
-    <div>
-      <Wrapper>
-        <div className="container grid grid-two-coloumn">
-          <div className="section-hero-data">
-            <p className="hero-top-data">Welcome to</p>
-            <h1 className="hero-heading">{name}</h1>
-            <p className="hero-para">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus itaque saepe nostrum neque, et est nihil commodi? Error nostrum eaque eveniet doloribus,
-               sequi quam rem accusantium odio placeat deserunt? Ratione.
+    <Wrapper>
+      <div className="container">
+        <div className="grid grid-two-column">
+          <div className="hero-section-data">
+            <p className="intro-data">Welcome to </p>
+            <h1>{name} </h1>
+            <p className="para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+              atque temporibus veniam doloribus libero ad error omnis voluptates
+              animi! Suscipit sapiente.
             </p>
-            <Button className="btn hireme-btn">
-              <NavLink to="/Products">SHOP NOW</NavLink>
-            </Button>
+            <NavLink>
+              <Button>shop now</Button>
+            </NavLink>
           </div>
+          {/* our homepage image  */}
           <div className="hero-section-image">
             <figure>
-              <img src={image} alt="" className="img-style" />
+              <img
+                src={image}
+                alt="hero-section-photo"
+                className="img-style"
+              />
             </figure>
           </div>
         </div>
-      </Wrapper>
-    </div>
+      </div>
+    </Wrapper>
   );
 };
+
 const Wrapper = styled.section`
 padding: 12rem 0;
 .container{
   max-width: 80rem;
     gap: 5rem
 }
-p{
+.grid{
+  gap: 5rem;
+}
+.para{
   font-size:1.25rem;
+}
+.intro-data{
+  font-size:1.5rem;
 }
 img {
   
@@ -56,6 +64,7 @@ img {
   h1 {
     text-transform: capitalize;
     font-weight: bold;
+    font-size:4rem;
   }
   .intro-data {
     margin-bottom: 0;

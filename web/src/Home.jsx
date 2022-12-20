@@ -1,25 +1,27 @@
-import { useEffect } from "react";
-import HeroSection from "./components/HeroSection";
-import { useGlobalContext } from "./Context";
-import Serve from "./components/Serve";
-import Trusted from "./components/Trusted";
+import React from 'react'
+import Serve from './components/Serve'
+import Trusted from './components/Trusted'
+import HeroSection from './components/HeroSection'
+
+
+
 const Home = () => {
-  // const data={
-  //   name:'Hafza Maria',
-  //   image:'./image/hero1.jpg'
-  // }
-
-  const { updateHomePage } = useGlobalContext();
-
-  useEffect(() => updateHomePage(), []);
-
-  return (
+  const data ={
+    name:'Maria Store',
+    image:'image/shop.jpg'
+  };
+  return(
     <>
-      <HeroSection />
-       <Serve/>
+  <HeroSection myData={data}/>
+  <Serve/>
        <Trusted/>
-    </>
-  );
+       </>
+  )
+
+
 };
 
-export default Home;
+
+
+export default Home
+

@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
-import Services from "./Services";
+
 import Contact from "./Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -45,7 +45,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Services" element={<Services />} />
+          
             <Route path='/Products' element={<Products />}/>
             <Route path="/Contact" element={<Contact />} />
             <Route path='/SingleProduct/:id' element={<SingleProduct />}/>
