@@ -1,6 +1,6 @@
 
 import HeroSection from './components/HeroSection'
-import { useProductContext } from './context/productcontext.mjs';
+import { useProductContext } from './context/productcontext.jsx';
 
 
 const About = () => {
