@@ -1,14 +1,20 @@
-import React from 'react'
+
 import HeroSection from './components/HeroSection'
+import { useProductContext } from './context/productcontext.mjs';
+
 
 const About = () => {
-
+const {myName} = useProductContext();
     const data ={
       name:'Maria Ecommerce',
       image:'image/shopping.jpg'
     };
-    return <HeroSection myData={data}/>
-  
+    return (
+      <>
+      {myName}
+    <HeroSection myData={data}/>
+    </>
+    )
   };
 
 
