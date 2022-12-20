@@ -17,7 +17,7 @@ const initialState = {
 };
 
 const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProducts = async (url) => {
     dispatch({type:'SET_LOADING'});
@@ -28,8 +28,8 @@ const AppProvider = ({ children }) => {
     } catch (e) {
       dispatch({ type: "API_ERROR" });
     }
-    console.log(products);
-    console.log(res);
+    // console.log(products);
+    // console.log(res);
   };
 
   useEffect(() => {
