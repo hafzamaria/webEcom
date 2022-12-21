@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 const Product = (curElem) => {
-    const {id , name , image ,price, category}= curElem; 
+    const {id , name, image, price, category}= curElem; 
   return (
    <NavLink to={`/SingleProduct/:${id}`}>
     <div className="card">

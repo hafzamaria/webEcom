@@ -26,6 +26,7 @@ if(isLoading){
 
 
   </Wrapper>
+
   )
 }
 const Wrapper = styled.section`
