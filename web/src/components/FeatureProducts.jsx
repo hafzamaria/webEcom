@@ -40,7 +40,9 @@ const Wrapper = styled.section`
   }
   .intro-data{
     font-size:2.5rem;
+      color:#8585a9;
   }
+  
   .grid{
     gap:5rem;
   }
@@ -100,11 +102,12 @@ const Wrapper = styled.section`
       align-items: center;
     }
     h3 {
-      color: ${({ theme }) => theme.colors.text};
+      color: #595050;
       text-transform: capitalize;
     }
     .card-data--price {
-      color: ${({ theme }) => theme.colors.helper};
+      color:#8585a9 ;
+      font-size:1.5rem;
     }
     .btn {
       margin: 2rem auto;

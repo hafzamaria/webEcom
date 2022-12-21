@@ -8,9 +8,9 @@ import axios from "axios";
 import reducer from "../reducer/ProductReducer";
 
 const AppContext = createContext();
-// const API = 'http://localhost:5000'
+const API = 'http://localhost:5000'
 // const API = "https://api.pujakaitem.com/api/products";
-const API = "https://api-production-66d4.up.railway.app";
+// const API = "https://api-production-66d4.up.railway.app";
 const initialState = {
   isLoading: false,
   isError: false,
