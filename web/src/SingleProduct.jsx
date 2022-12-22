@@ -12,6 +12,7 @@ import {MdSecurity} from 'react-icons/md'
 const API = "https://api.pujakaitem.com/api/products";
 // const API = 'http://localhost:5000'
 
+
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
@@ -112,6 +113,13 @@ const Wrapper = styled.section`
   }
   .product{
     width:100%;
+  }
+  .grid{
+    gap:2rem;
+  } 
+  .product_images{
+    display:flex;
+    align-items: center;
   }
   .product-data {
     display: flex;
