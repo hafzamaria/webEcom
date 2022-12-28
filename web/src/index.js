@@ -4,15 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./context/productcontext.jsx";
-
+import { FilterContextProvider } from "./context/filtercontext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<AppProvider>
-    <React.StrictMode>
+  <AppProvider>
+    <FilterContextProvider>
       <App />
-    </React.StrictMode>
-    </AppProvider>
+    </FilterContextProvider>
+  </AppProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
