@@ -8,7 +8,7 @@ import { Container } from "./Styles/Container";
 import FormatPrice from './helpers/FormatPrice'
 import {TbReplace, TbTruckDelivery } from 'react-icons/tb'
 import {MdSecurity} from 'react-icons/md'
-
+import Star from "./components/Star";
 const API = "https://api.pujakaitem.com/api/products";
 // const API = 'http://localhost:5000'
 
@@ -53,8 +53,8 @@ const { id } = useParams();
         {/* product dAta  */}
         <div className="product-data product">
           <h2>{name}</h2>
-          <p>{stars}</p>
-          <p>{reviews} reviews</p>
+          <Star stars={stars} reviews={reviews}/>
+         
           <p className="product-data-price">
             MRP:
             <del>
