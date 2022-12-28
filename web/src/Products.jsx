@@ -3,11 +3,10 @@ import FilterSection from './components/FilterSection';
 import Sort from './components/Sort';
 import ProductList from './components/ProductList';
 import styled from "styled-components";
-import { useFilterContext } from './context/filtercontext';
+
 
 const Products = () => {
-  const {filter_products} = useFilterContext();
-  console.log(filter_products);
+  
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">
@@ -29,8 +28,19 @@ const Products = () => {
   )
 };
 const Wrapper = styled.section`
-.container{
+.grid{
   max-width:60vw;
+  
+}
+.container {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+a{
+  width: 250px;
 }
 .filter-section{
   width:20%;
