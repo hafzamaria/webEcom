@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
+import { NavLink } from "react-router-dom";
+import {Button} from "../Styles/Button"
    
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product;
@@ -34,6 +36,9 @@ const AddToCart = ({ product }) => {
       </div>
       {/* add to cart */}
       <CartAmountToggle amount={amount} setDecrease={setDecrease} setIncrease={setIncrease}/>
+      <NavLink to="/Cart">
+    <Button className="btn">Add To Cart</Button>
+      </NavLink>
     </Wrapper>
   );
 };
@@ -69,6 +74,9 @@ const Wrapper = styled.section`
     color: #fff;
   }
   /* we can use it as a global one too  */
+  .cart-button {
+    margin-right:2rem;
+  }
   .amount-toggle {
     margin-top: 3rem;
     margin-bottom: 1rem;
