@@ -89,6 +89,7 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
     width: 100%;
+  
     .card-data {
       padding: 0 2rem;
     }

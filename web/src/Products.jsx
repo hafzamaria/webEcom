@@ -29,15 +29,18 @@ const Products = () => {
 };
 const Wrapper = styled.section`
 .grid{
-  max-width:60vw;
+ width:auto;
   
 }
 .container {
-  max-width: 120rem;
+  width:auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+}
+.main-product{
+  width:auto;
 }
 a{
   width: 250px;
