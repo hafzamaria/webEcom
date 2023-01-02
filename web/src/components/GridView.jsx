@@ -82,7 +82,9 @@ const Wrapper = styled.section`
       align-items: center;
     }
     .card-data--price {
-      color: ${({ theme }) => theme.colors.helper};
+      color:#1221b5;
+      font-size:1.5rem;
+      margin-bottom: 2px;
     }
     h3 {
       color: ${({ theme }) => theme.colors.text};
