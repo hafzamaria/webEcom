@@ -57,8 +57,9 @@ const setListView = ()=>{
   // to sort the products
   useEffect(()=>{
   //  console.log("hiii")
+  dispatch({ type: "FILTER_PRODUCTS"});//for searchBar working
   dispatch({type:"SORTING_PRODUCTS"});
-  },[state.sorting_value]);
+  },[products ,state.sorting_value , state.filters]);
 
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
