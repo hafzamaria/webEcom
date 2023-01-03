@@ -32,16 +32,21 @@ const setListView = ()=>{
   return dispatch ({type:"SET_LIST_VIEW"});
   };
 
-  // sorting function
-  const sorting = ( )=>{
-  dispatch({type:"GET_SORT_VALUE"});
-  }
+  // sorting function method1
+  // const sorting = ( )=>{
+  // dispatch({type:"GET_SORT_VALUE"});
+  // }
 
+  // sorting function method2
+  const sorting = (event )=>{
+    let userValue = event.target.value;
+  dispatch({type:"GET_SORT_VALUE" , payload: userValue});
+  };
 
   // to sort the products
   useEffect(()=>{
   //  console.log("hiii")
-  dispatch({type:"SORTING_PRODUCTS" , payload:products});
+  dispatch({type:"SORTING_PRODUCTS"});
   },[state.sorting_value]);
 
   useEffect(() => {
