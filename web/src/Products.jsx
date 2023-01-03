@@ -38,6 +38,8 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
+  
+    align-items: flex-start;
 }
 .main-product{
   width:auto;
