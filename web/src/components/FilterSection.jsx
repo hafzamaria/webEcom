@@ -15,6 +15,7 @@ const FilterSection = () => { ///its search box
       return curElem[property];
     });
    return (newValue =["All", ...new Set(newValue)]
+ 
    );
   //  console.log(newValue);
   }
@@ -54,7 +55,7 @@ console.log(companyOnlyData);
           })}
         </div>
       </div>
-      <div className="filter-company">
+      {/* <div className="filter-company">
         <h3>Company</h3>
        
         <form action="#">
@@ -75,16 +76,26 @@ console.log(companyOnlyData);
                 
               </select>
             </form>
-          {/* {companyOnlyData.map((curElem , index)=>{
-            return(
-             
-            )
+        </div> */}
+      <div className="filter-company">
+        <h3>Company</h3>
 
-          })
-
-          } */}
-        </div>
-      
+        <form action="#">
+          <select
+            name="company"
+            id="company"
+            className="filter-company--select"
+            onClick={updateFilterValue}>
+            {companyOnlyData.map((curElem, index) => {
+              return (
+                <option key={index} value={curElem} name="company">
+                  {curElem}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+      </div>
     </Wrapper>
   )
 };

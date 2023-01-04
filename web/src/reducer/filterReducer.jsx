@@ -1,3 +1,4 @@
+import { all } from "axios";
 
 const filterReducer = (state, action) => {
     switch (action.type) {
@@ -116,13 +117,24 @@ const filterReducer = (state, action) => {
             // return curElem.name.toLowerCase().startsWith(text);//startsWith se start letter search hot h 
           })
          }
-         if(category){
+        //  if (category !== "all") {
+        //   tempFilterProduct = tempFilterProduct.filter(
+        //     (curElem) => curElem.category === category
+        //   );
+        // }
+        // if (company !== "all") {
+        //   tempFilterProduct = tempFilterProduct.filter(
+        //     (curElem) => curElem.company.toLowerCase() === company.toLowerCase()
+        //   );
+        // }
+         if(category !== "all"){
           tempFilterProduct = tempFilterProduct.filter((curElem)=>{
             return curElem.category === category;
           })
          }
+        
          
-         if(company){
+         if(company !== "all") {
           tempFilterProduct = tempFilterProduct.filter((curElem)=>{
             return curElem.company.toLowerCase() === company.toLowerCase();
           })
