@@ -1,12 +1,26 @@
 import styled from "styled-components"
 import { useFilterContext } from "../context/filtercontext";
 
-const FilterSection = () => {
+const FilterSection = () => { ///its search box
+
   const {
     filters: { text },
     updateFilterValue,
-   
+    all_products,
   } = useFilterContext();
+  
+  //to get the unique data of each fields
+  const getUniqueData = (data , property)=>{
+    let newValue = data.map((curElem)=>{
+      return curElem[property];
+    });
+    newValue =["All", ...new Set(newValue)];
+   console.log(newValue);
+  }
+
+  //  we need unique data
+  const categoryOnlyData = getUniqueData(all_products, "category");
+
   return (
     <Wrapper>
    

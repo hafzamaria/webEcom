@@ -80,5 +80,8 @@ const Wrapper = styled.section`
       padding: 10px;
     }
   }
+  .products-data{
+    font-size: 1.5rem;
+  }
 `;
 export default Sort
