@@ -4,7 +4,7 @@ import { useFilterContext } from "../context/filtercontext";
 const FilterSection = () => { ///its search box
 
   const {
-    filters: { text },
+    filters: { text ,category },
     updateFilterValue,
     all_products,
   } = useFilterContext();
@@ -14,12 +14,13 @@ const FilterSection = () => { ///its search box
     let newValue = data.map((curElem)=>{
       return curElem[property];
     });
-    newValue =["All", ...new Set(newValue)];
-   console.log(newValue);
+   return (newValue =["All", ...new Set(newValue)]
+   );
+  //  console.log(newValue);
   }
 
   //  we need unique data
-  const categoryOnlyData = getUniqueData(all_products, "category");
+  const categoryOnlyData = getUniqueData(all_products, "category"  );
 
   return (
     <Wrapper>
@@ -34,6 +35,23 @@ const FilterSection = () => { ///its search box
             onChange={updateFilterValue}
           />
         </form>
+      </div>
+      <div className="filter-category">
+        <h3>Category</h3>
+        <div>
+          {categoryOnlyData.map((curElem , index)=>{
+            return(
+              <button 
+              key={index}
+              type="button"
+              name="category"
+              value={curElem}
+              onClick={updateFilterValue}>
+                {curElem}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </Wrapper>
   )
