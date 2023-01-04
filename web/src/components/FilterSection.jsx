@@ -21,7 +21,8 @@ const FilterSection = () => { ///its search box
 
   //  we need unique data
   const categoryOnlyData = getUniqueData(all_products, "category"  );
-
+  const companyOnlyData = getUniqueData(all_products, "company"  );
+console.log(companyOnlyData);
   return (
     <Wrapper>
    
@@ -53,6 +54,37 @@ const FilterSection = () => { ///its search box
           })}
         </div>
       </div>
+      <div className="filter-company">
+        <h3>Company</h3>
+       
+        <form action="#">
+              <select name='company' id='company' className='filter-company--select' onClick={updateFilterValue}> 
+                 {
+                  companyOnlyData.map((curElem , index)=>{
+                    return(
+                     <option 
+                     key={index}
+                     type="button"
+                     name="company"
+                     value={curElem}>
+                       {curElem}
+                     </option>
+                    )
+                  })
+                 }
+                
+              </select>
+            </form>
+          {/* {companyOnlyData.map((curElem , index)=>{
+            return(
+             
+            )
+
+          })
+
+          } */}
+        </div>
+      
     </Wrapper>
   )
 };
