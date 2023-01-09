@@ -14,9 +14,9 @@ const FilterSection = () => { ///its search box
     let newValue = data.map((curElem)=>{
       return curElem[property];
     });
-   return (newValue =["All", ...new Set(newValue)]
+    return (newValue = ["all", ...new Set(newValue)]);
  
-   );
+   
   //  console.log(newValue);
   }
 
@@ -43,40 +43,28 @@ console.log(companyOnlyData);
         <div>
           {categoryOnlyData.map((curElem , index)=>{
             return(
-              <button 
+              // <button 
+              // key={index}
+              // type="button"
+              // name="category"
+              // value={curElem}
+              // onClick={updateFilterValue}>
+              //   {curElem}
+              // </button>
+              <button
               key={index}
               type="button"
               name="category"
               value={curElem}
+              className={curElem === category ? "active" : ""}
               onClick={updateFilterValue}>
-                {curElem}
-              </button>
+              {curElem}
+            </button>
             )
           })}
         </div>
       </div>
-      {/* <div className="filter-company">
-        <h3>Company</h3>
-       
-        <form action="#">
-              <select name='company' id='company' className='filter-company--select' onClick={updateFilterValue}> 
-                 {
-                  companyOnlyData.map((curElem , index)=>{
-                    return(
-                     <option 
-                     key={index}
-                     type="button"
-                     name="company"
-                     value={curElem}>
-                       {curElem}
-                     </option>
-                    )
-                  })
-                 }
-                
-              </select>
-            </form>
-        </div> */}
+      
       <div className="filter-company">
         <h3>Company</h3>
 
@@ -94,6 +82,7 @@ console.log(companyOnlyData);
               );
             })}
           </select>
+          
         </form>
       </div>
     </Wrapper>
