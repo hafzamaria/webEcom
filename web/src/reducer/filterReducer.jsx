@@ -85,23 +85,14 @@ const filterReducer = (state, action) => {
       case "FILTER_PRODUCTS":
         let {all_products} =state;
         let tempFilterProduct = [...all_products];
-        const {text ,category , company} = state.filters;
+        const {text ,category , company,color} = state.filters;
          if(text){
           tempFilterProduct = tempFilterProduct.filter((curElem)=>{
             return curElem.name.toLowerCase().includes(text);//included se word k bich mai b agr wo word h tu search hoga
             // return curElem.name.toLowerCase().startsWith(text);//startsWith se start letter search hot h 
           })
          }
-        //  if (category !== "all") {
-        //   tempFilterProduct = tempFilterProduct.filter(
-        //     (curElem) => curElem.category === category
-        //   );
-        // }
-        // if (company !== "all") {
-        //   tempFilterProduct = tempFilterProduct.filter(
-        //     (curElem) => curElem.company.toLowerCase() === company.toLowerCase()
-        //   );
-        // }
+       
          if(category !== "all"){
           tempFilterProduct = tempFilterProduct.filter((curElem)=>{
             return curElem.category === category;
@@ -114,6 +105,17 @@ const filterReducer = (state, action) => {
             return curElem.company.toLowerCase() === company.toLowerCase();
           })
          }
+
+        //  if(color ){
+        //   tempFilterProduct = tempFilterProduct.filter((curElem)=>{
+        //     return curElem.colors.includes( color);
+        //   })
+        //  }
+       if(color !== "all"){
+        tempFilterProduct = tempFilterProduct.filter((curElem)=>{
+          return curElem.colors.includes( color);
+        })
+       }
         return{
           ...state,
           filter_products : tempFilterProduct,
