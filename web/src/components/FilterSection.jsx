@@ -184,13 +184,15 @@ const Wrapper = styled.section`
   }
   .filter-color-style {
     display: flex;
-    justify-content: center;
+ 
   }
   .color-all--style {
     background-color: transparent;
     text-transform: capitalize;
     border: none;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
   }
   .btnStyle {
