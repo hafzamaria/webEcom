@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useFilterContext } from "../context/filtercontext";
 import FormatPrice from "../helpers/FormatPrice";
 import { FaCheck } from "react-icons/fa";
+import {Button} from "../Styles/Button"
 
 const FilterSection = () => {
   ///its search box
@@ -10,6 +11,7 @@ const FilterSection = () => {
     filters: { text, category, color, maxPrice, price, minPrice },
     updateFilterValue,
     all_products,
+    clearFilters,
   } = useFilterContext();
 
   //to get the unique data of each fields
@@ -139,8 +141,11 @@ const FilterSection = () => {
       </div>
       <div className="filter_price">
         <h3>Price</h3>
-        <p>{<FormatPrice price={price} />}</p>
+        <p className="price">{<FormatPrice price={price} />}</p>
         <input type="range" value={price} name="price" min={minPrice} max={maxPrice} onChange={updateFilterValue}/>
+      </div>
+      <div className="filter-clear">
+        <Button className="btn" onClick={clearFilters}>Clear Filters</Button>
       </div>
     </Wrapper>
   );
@@ -236,6 +241,10 @@ const Wrapper = styled.section`
   .filter-clear .btn {
     background-color: #ec7063;
     color: #000;
+  }
+  .price{
+    font-size: 1.5rem;
+    margin-top: -1rem;
   }
 `;
 
