@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./context/productcontext.jsx";
 import { FilterContextProvider } from "./context/filtercontext";
+import { CartProvider } from "./context/cart_context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AppProvider>
     <FilterContextProvider>
+      <CartProvider>
       <App />
+      </CartProvider>
     </FilterContextProvider>
   </AppProvider>
 );
