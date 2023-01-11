@@ -1,15 +1,29 @@
 import styled from "styled-components";
+import { useCartContext } from "./context/cart_context";
 
 const Cart = () => {
+  const {cart} =useCartContext();
+  console.log("cart:" , cart);
   return <Wrapper>
-    <>
-    i am Cart
-    </>
+   <div className="container">
+    <div className="cart-heading grid grid-five-column">
+      <p>Item</p>
+      <p className="cart-hide">Price</p>
+      <p>Quantity</p>
+      <p className="cart-hide">Subtotal</p>
+      <p>Remove</p>
+    </div>
+    <hr/>
+   </div>
   </Wrapper>;
 };
 
 const Wrapper = styled.section`
   padding: 9rem 0;
+
+  .container{
+    max-width:70%;
+  }
 
   .grid-four-column {
     grid-template-columns: repeat(4, 1fr);
@@ -19,10 +33,16 @@ const Wrapper = styled.section`
     grid-template-columns: repeat(4, 1fr) 0.3fr;
     text-align: center;
     align-items: center;
+   
   }
   .cart-heading {
     text-align: center;
     text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:1.25rem;
+
   }
   hr {
     margin-top: 1rem;
@@ -151,8 +171,12 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .container{
+      max-width:100%;
+    }
     .grid-five-column {
       grid-template-columns: 1.5fr 1fr 0.5fr;
+     
     }
     .cart-hide {
       display: none;
