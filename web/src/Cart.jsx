@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useCartContext } from "./context/cart_context";
-
+import CartItem from "./components/CartItem";
 const Cart = () => {
   const {cart} =useCartContext();
   console.log("cart:" , cart);
@@ -14,6 +14,13 @@ const Cart = () => {
       <p>Remove</p>
     </div>
     <hr/>
+    <div className="cart-item item">
+      {
+        cart.map((curElem)=>{
+         return <CartItem key={curElem.id} {...curElem}/>;/////CartItem a new Component
+        })
+      }
+    </div>
    </div>
   </Wrapper>;
 };
@@ -23,6 +30,16 @@ const Wrapper = styled.section`
 
   .container{
     max-width:70%;
+  }
+  .container2{
+    max-width:100%;
+    display: flex;
+ 
+    
+  }
+ 
+  p{
+    margin-top:0rem;
   }
 
   .grid-four-column {
@@ -35,6 +52,10 @@ const Wrapper = styled.section`
     align-items: center;
    
   }
+  .grid{
+    width: 100%;
+  }
+ 
   .cart-heading {
     text-align: center;
     text-transform: uppercase;
@@ -42,7 +63,16 @@ const Wrapper = styled.section`
     justify-content: space-around;
     align-items: center;
     font-size:1.25rem;
-
+    flex-direction: row;
+  }
+  .cart-heading2{
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:1.25rem;
+    flex-direction: row;
   }
   hr {
     margin-top: 1rem;
@@ -52,6 +82,10 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+  }
+  .item{
+    display: flex;
+    align-items: flex-start;
   }
 
   .cart-user--profile {

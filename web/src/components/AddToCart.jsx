@@ -37,7 +37,11 @@ const AddToCart = ({ product }) => {
         </p>
       </div>
       {/* add to cart */}
-      <CartAmountToggle amount={amount} setDecrease={setDecrease} setIncrease={setIncrease}/>
+      <CartAmountToggle 
+      amount={amount} 
+      setDecrease={setDecrease} 
+      setIncrease={setIncrease}/>
+      
       <NavLink to="/Cart"
       onClick={ () => addToCart (id , color , amount ,product)}>
     <Button className="btn">Add To Cart</Button>
