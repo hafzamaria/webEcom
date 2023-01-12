@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CgMenu, CgClose } from "react-icons/cg"; ////in react-icons go to css.gg last mai hai menu mai
 import {FiShoppingCart} from "react-icons/fi";
+import { useCartContext } from "../context/cart_context";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false); /////for mob menu
-  
+  const  { total_item} = useCartContext();
         
   const Nav = styled.nav`
   .cart-trolley--link{
@@ -197,7 +198,7 @@ const Navbar = () => {
             onClick={() => setOpenMenu(!openMenu)}
             ClassName="active">
               <FiShoppingCart className="cart-trolley "/> 
-              <span className="cart-total--item">10</span>
+              <span className="cart-total--item">{total_item}</span>
             </NavLink>
           </li>
         </ul>

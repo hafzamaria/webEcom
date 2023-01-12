@@ -19,7 +19,7 @@ const initialState ={
     // cart:[],
     cart:getLocalCartData(),
     total_item:"",
-    total_amount:"",
+    total_price:"",
     shipping_fee:5000,
 };
 
@@ -53,6 +53,7 @@ const CartProvider =({children})=>{
   ////////////to add data in local storage
   ////get vs set////
   useEffect(()=>{
+    dispatch({type:"CART_TOTAL_ITEM"})///for cart icon total jo navbar pr h
     localStorage.setItem("MyCart" , JSON.stringify(state.cart));
 
   },[state.cart])
