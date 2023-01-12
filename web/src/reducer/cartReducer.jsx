@@ -1,4 +1,3 @@
-import React from 'react'
 
 const cartReducer = (state, action) => {
     if (action.type === "ADD_TO_CART"){
@@ -6,23 +5,48 @@ const cartReducer = (state, action) => {
         let{id , color , amount,product} = action.payload;
         // console.log(product);
 
-        let cartProduct;
+///////////////tackle the existing product
+let existingProduct = state.cart.find((curItem) => curItem.id == id+ color);
+// console.log("existingProduct:" ,existingProduct);
 
-        cartProduct = {
-            id  :id + color,
-            name:product.name,
-            color,
-            amount,
-            price:product.price,
-            image:product.image[0].url,
-            max:product.stock,
+  if(existingProduct) {
+   let updatedProduct = state.cart.map((curElem)=>{
+    if(curElem.id == id + color) {
+        let newAmount = curElem.amount + amount;
+        
+        if(newAmount >= curElem.max){
+            newAmount = curElem.max;
         }
-    
-  return {
+        return {
+            ...curElem,
+            amount: newAmount,
+        };
+    }else{
+        return curElem;
+    }
+   });
+   return {
     ...state,
-    cart:[...state.cart ,  cartProduct],
+    cart:updatedProduct,
+    };
+  }else{
+    let cartProduct;
+
+    cartProduct = {
+        id  :id + color,
+        name:product.name,
+        color,
+        amount,
+        price:product.price,
+        image:product.image[0].url,
+        max:product.stock,
+    }
+
+return {
+...state,
+cart:[...state.cart ,  cartProduct],
 };
-  
+}
 }
 if(action.type === "REMOVE_ITEM"){
     let updatedCart = state.cart.filter(
