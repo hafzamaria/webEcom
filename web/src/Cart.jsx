@@ -21,6 +21,7 @@ const Cart = () => {
         })
       }
     </div>
+    <hr/>
    </div>
   </Wrapper>;
 };
@@ -32,7 +33,7 @@ const Wrapper = styled.section`
     max-width:70%;
   }
   .container2{
-    max-width:100%;
+    width:100%;
     display: flex;
  
     
