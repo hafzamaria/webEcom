@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { useCartContext } from "./context/cart_context";
 import CartItem from "./components/CartItem";
+import { Button } from "./Styles/Button";
+import { NavLink } from "react-router-dom";
+
 const Cart = () => {
-  const {cart} =useCartContext();
+  const {cart ,clearCart} =useCartContext();
   console.log("cart:" , cart);
   return <Wrapper>
    <div className="container">
@@ -22,6 +25,15 @@ const Cart = () => {
       }
     </div>
     <hr/>
+    <div className="cart-two-button">
+      
+      <NavLink to="/Products">
+      <Button>Continue Shopping</Button>
+      </NavLink>
+      <Button className="btn btn-clear" onClick={clearCart}>Clear Cart</Button>
+      
+      
+    </div>
    </div>
   </Wrapper>;
 };

@@ -34,6 +34,13 @@ if(action.type === "REMOVE_ITEM"){
 
     }
 }
+////////////to clear Cart
+ if (action.type === "CLEAR_CART" ){
+    return{
+        ...state,
+        cart:[],
+    }
+ }
 return state;
 }
 
