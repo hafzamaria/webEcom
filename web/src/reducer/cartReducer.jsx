@@ -13,7 +13,7 @@ let existingProduct = state.cart.find((curItem) => curItem.id == id+ color);
    let updatedProduct = state.cart.map((curElem)=>{
     if(curElem.id == id + color) {
         let newAmount = curElem.amount + amount;
-        
+
         if(newAmount >= curElem.max){
             newAmount = curElem.max;
         }
@@ -48,6 +48,57 @@ cart:[...state.cart ,  cartProduct],
 };
 }
 }
+
+/////to set the increment & decrement
+
+if(action.type === "SET_DECREASE"){
+    let updatedProduct = state.cart.map((curItem)=>{
+     if(curItem.id === action.payload){
+        // console.log(curItem);
+        let decAmount = curItem.amount -1;
+        if(decAmount <= 0){
+            decAmount = 1;
+            
+        }
+        return{
+            ...curItem,
+            amount: decAmount,
+        }
+     }else{
+        return curItem;
+        
+     }   
+    })
+    return{
+        ...state,
+        cart:updatedProduct,
+    }
+}
+
+if(action.type === "SET_INCREASE"){
+    let updatedProduct = state.cart.map((curItem)=>{
+     if(curItem.id === action.payload){
+        // console.log(curItem);
+        let incAmount = curItem.amount +1;
+        if(incAmount >= curItem.max){
+            incAmount = curItem.max;
+            
+        }
+        return{
+            ...curItem,
+            amount: incAmount,
+        }
+     }else{
+        return curItem;
+        
+     }   
+    })
+    return{
+        ...state,
+        cart:updatedProduct,
+    }
+}
+
 if(action.type === "REMOVE_ITEM"){
     let updatedCart = state.cart.filter(
         (curItem)=>curItem.id !== action.payload

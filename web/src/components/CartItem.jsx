@@ -6,16 +6,16 @@ import { useCartContext } from "../context/cart_context";
 import { useState } from "react";
 
 
-const CartItem = ({ id, name, image, color, amount, price ,stock}) => {
-    const {removeItem} = useCartContext();
+const CartItem = ({ id, name, image, color, amount, price ,stock,}) => {
+    const {removeItem , setDecrease ,setIncrease} = useCartContext();
 
-    // const [amounts , setAmount] = useState(1);
-    const setDecrease =()=>{
-        //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
-    }
-   const setIncrease =()=>{
-    //   amount < stock  ? setAmount(amount + 1) : setAmount(stock); 
-    }
+  //   const [amount , setAmount] = useState(1);
+  //   const setDecrease =()=>{
+  //         amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  //   }
+  //  const setIncrease =()=>{
+  //     amount < stock  ? setAmount(amount + 1) : setAmount(stock); 
+  //   }
 
   return (
   <div className="container2">
@@ -46,8 +46,8 @@ const CartItem = ({ id, name, image, color, amount, price ,stock}) => {
     {/* Quantity  */}
     <CartAmountToggle
       amount={amount}
-      setDecrease={setDecrease}
-      setIncrease={setIncrease}
+      setDecrease={()=>setDecrease(id)}
+      setIncrease={()=>setIncrease(id)}
     />
 
     {/* //Subtotal */}
