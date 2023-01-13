@@ -54,6 +54,7 @@ const CartProvider =({children})=>{
   ////get vs set////
   useEffect(()=>{
     dispatch({type:"CART_TOTAL_ITEM"})///for cart icon total jo navbar pr h
+    dispatch({type:"CART_TOTAL_PRICE"})
     localStorage.setItem("MyCart" , JSON.stringify(state.cart));
 
   },[state.cart])
