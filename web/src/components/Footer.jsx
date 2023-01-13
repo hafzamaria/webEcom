@@ -205,6 +205,7 @@ footer{
     display: flex;
     justify-content: center;
     gap: ;
+    margin-left: 1rem;
   }
 }
 }

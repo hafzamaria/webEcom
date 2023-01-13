@@ -87,12 +87,12 @@ figure {
   position: relative;
   &::after {
     content: "";
-    width: 60%;
-    height: 80%;
-    background-color: rgba(81, 56, 238, 0.4);
+    width: 34%;
+    height: 74%;
+    background-color: rgba(81,56,238,0.4);
     position: absolute;
     left: 50%;
-    top: -5rem;
+    top: -4rem;
     z-index: -1;
   }
 }
@@ -107,14 +107,21 @@ figure {
     .grid {
       gap: 10rem;
       margin-top:-7rem;
+      display: flex;
+    flex-direction: column;
+    }
+    figure{
+      display: flex;
+      width: 80%;
+      justify-content: center;
     }
     figure::after {
       content: "";
-      width: 50%;
       height: 100%;
-      left: 0;
-      top: 10%;
-      
+      width: 62%;
+      height: 100%;
+      left: 81px;
+      top: 9%;
       background-color: rgba(81, 56, 238, 0.4);
     }
   }

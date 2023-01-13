@@ -42,13 +42,13 @@ const { id } = useParams();
   }
 
   return(
-    <Wrapper>
+    <Wrapper >
     <PageNavigation title={name} />
     <Container className="container">
       <div className="grid grid-two-column">
         {/* product Images  */}
         <div className="product_images product">
-          <MyImage imgs={image} />
+          <MyImage className="images" imgs={image} />
         </div>
 
         {/* product dAta  */}
@@ -183,6 +183,26 @@ const Wrapper = styled.section`
   }
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     padding: 0 2.4rem;
+    .container{
+      width: auto;
+    display: flex;
+    justify-content: center;
+    }
+    .grid{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .style{
+      padding:0;
+    }
+    .images{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
   }
 `;
 

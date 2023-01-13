@@ -246,6 +246,7 @@ const Wrapper = styled.section`
     font-size: 1.5rem;
     margin-top: -1rem;
   }
+ 
 `;
 
 export default FilterSection;

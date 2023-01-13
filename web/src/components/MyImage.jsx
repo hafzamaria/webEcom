@@ -9,7 +9,7 @@ import styled from 'styled-components';
    
     console.log(imgs)
   return (
-    <Wrapper>
+    <Wrapper className='images'>
     <div className="grid">
       {imgs.map((curElm, index) => {
         return (
@@ -72,10 +72,12 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     order: 1;
+  
     .grid-four-column {
       grid-template-rows: 1fr;
       grid-template-columns: repeat(4, 1fr);
     }
+  
   }
 `;
 export default MyImage

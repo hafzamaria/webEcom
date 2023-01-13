@@ -18,7 +18,7 @@ const Sort = () => {
     </button>
       </div>
       {/* 2ndColumn */}
-      <div className="products-data"><p>{`${filter_products.length} Products Available`}</p></div>
+      <div className="products-data"><p className='data'>{`${filter_products.length} Products Available`}</p></div>
       {/* 3rdColumn */}
       <div className="sort-selection">
     <form action="#">
@@ -82,6 +82,21 @@ const Wrapper = styled.section`
   }
   .products-data{
     font-size: 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .sort-section{
+      gap: 2rem;
+    }
+    .sorting-list--grid{
+      height:3rem;
+      gap: 1rem;
+      margin-right:1rem;
+    }
+    .data{
+      font-size: 1rem;
+    text-align: center;
+    margin-top: 0rem;
+    }
   }
 `;
 export default Sort

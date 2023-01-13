@@ -60,6 +60,17 @@ a{
     .grid-filter-column {
       grid-template-columns: 1fr;
     }
+   
+    .filter-section{
+        width:100%
+      }
+      .product-view--sort{
+        width:100%;
+      }
+      .product-view--sort{
+        width:auto;
+      }
+      
   }
 `;
 

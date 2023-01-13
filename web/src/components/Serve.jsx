@@ -93,7 +93,14 @@ padding: 7rem 0;
     color: #5138ee;
   }
 
-
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .grid{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+    }
+   }
 `
 
 export default Serve

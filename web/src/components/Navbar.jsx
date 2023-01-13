@@ -156,8 +156,8 @@ const Navbar = () => {
         <ul className="navbar-list">
           <li >
             <NavLink className="navbar-link"  to="/"
-            // onClick={() => setOpenMenu(!openMenu)}
-            onClick={() => setOpenMenu(false)}///we can use this instead of !openMenu both working same
+            onClick={() => setOpenMenu(!openMenu)}
+            // onClick={() => setOpenMenu(false)}///we can use this instead of !openMenu both working same
             activeClassName="active">
               Home
             </NavLink>
@@ -166,17 +166,17 @@ const Navbar = () => {
             <NavLink 
             className="navbar-link" 
             to="/About"
-            // onClick={() => setOpenMenu(!openMenu)}
-            onClick={() => setOpenMenu(false)}
+            onClick={() => setOpenMenu(!openMenu)}
+            // onClick={() => setOpenMenu(false)}
             ClassName="active">About</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className="navbar-link" to="/Services"
             onClick={() => setOpenMenu(!openMenu)}
             ClassName="active">
               Services
             </NavLink>
-          </li>
+          </li> */}
          
           
           <li>
