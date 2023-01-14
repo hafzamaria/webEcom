@@ -119,61 +119,61 @@ if(action.type === "REMOVE_ITEM"){
  ////////////////////
 
 
-//   if (action.type === "CART_TOTAL_ITEM") {
-//     let updatedItemVal = state.cart.reduce((initialVal, curElem) => {
-//       let { amount } = curElem;
+  if (action.type === "CART_TOTAL_ITEM") {
+    let updatedItemVal = state.cart.reduce((initialVal, curElem) => {
+      let { amount } = curElem;
 
-//       initialVal = initialVal + amount;
-//       return initialVal;
-//     }, 0);
+      initialVal = initialVal + amount;
+      return initialVal;
+    }, 0);
 
-//     return {
-//       ...state,
-//       total_item: updatedItemVal,
-//     };
-//   }
+    return {
+      ...state,
+      total_item: updatedItemVal,
+    };
+  }
 //  /////////////////////
 
  
-//   if (action.type === "CART_TOTAL_PRICE") {
-//     let total_price = state.cart.reduce((initialVal, curElem) => {
-//       let { price, amount } = curElem;
+  if (action.type === "CART_TOTAL_PRICE") {
+    let total_price = state.cart.reduce((initialVal, curElem) => {
+      let { price, amount } = curElem;
 
-//       initialVal = initialVal + price * amount;
+      initialVal = initialVal + price * amount;
 
-//       return initialVal;
-//     }, 0);
+      return initialVal;
+    }, 0);
 
-//     return {
-//       ...state,
-//       total_price,
-//     };
-//   }
-  //////////////simplyfy uper wale dono methods
-if(action.type === "CART_ITEM_PRICE_TOTAL_"){
-  let {total_item , total_price}= state.cart.reduce((accum, curElem) => {////accum = accumilator
-    let { price, amount } = curElem;
-
-    // accum.total_item = accum + amount;
-    // accum.total_price = accum + price * amount;
-
-    accum.total_item += amount;
-    accum.total_price += + price * amount;
-
-    return accum;
-  },
-  {
-    total_item:0,
-    total_price:0,
+    return {
+      ...state,
+      total_price,
+    };
   }
-  );
-  return {
-    ...state,
-    total_price,
-    total_item,
-  };
+  //////////////simplyfy uper wale dono methods
+// if(action.type === "CART_ITEM_PRICE_TOTAL_"){
+//   let {total_item , total_price}= state.cart.reduce((accum, curElem) => {////accum = accumilator
+//     let { price, amount } = curElem;
+
+//     // accum.total_item = accum + amount;
+//     // accum.total_price = accum + price * amount;
+
+//     accum.total_item += amount;
+//     accum.total_price += + price * amount;
+
+//     return accum;
+//   },
+//   {
+//     total_item:0,
+//     total_price:0,
+//   }
+//   );
+//   return {
+//     ...state,
+//     total_price,
+//     total_item,
+//   };
   
-}
+// }
 
 return state;
 }
