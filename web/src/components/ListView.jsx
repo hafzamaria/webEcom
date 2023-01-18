@@ -123,6 +123,13 @@ const Wrapper = styled.section`
       color: #fff;
     }
   }
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
 
 export default ListView
