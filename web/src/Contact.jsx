@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const Contact = () => {
+
+  const {  isAuthenticated ,user} = useAuth0();////contact form mai user ka name or email dikhane k liye
+
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
 
@@ -73,6 +76,7 @@ allowFullScreen=""
             <input
               type="text"
               name="username"
+              value={isAuthenticated ? user.name : ""}
               placeholder="username"
               autoComplete="off"
               required
@@ -82,6 +86,7 @@ allowFullScreen=""
             <input
               type="email"
               name="Email"
+              value={isAuthenticated ? user.email : ""}
               placeholder="Email"
               autoComplete="off"
               required

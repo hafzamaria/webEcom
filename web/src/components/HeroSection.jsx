@@ -87,12 +87,12 @@ figure {
   position: relative;
   &::after {
     content: "";
-    width: 34%;
+    width: 58%;
     height: 74%;
     background-color: rgba(81,56,238,0.4);
     position: absolute;
     left: 50%;
-    top: -4rem;
+    top: -3rem;
     z-index: -1;
   }
 }
