@@ -2,18 +2,25 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
+import { json } from "react-router-dom";
 import reducer from "../reducer/cartReducer";
 
 const CartContext = createContext();
 
 const getLocalCartData=()=>{
   let localCartData = localStorage.getItem("MyCart");
-  if(localCartData === []){
-    return[];
-  }else{
-    return JSON.parse(localCartData);///parse is a method to get original data which is converted by JSON.stringify
-  }
+//   if(localCartData === []){
+//     return[];
+//   }else{
+//     return JSON.parse(localCartData);///parse is a method to get original data which is converted by JSON.stringify
+//   }///after hosting this method give error so new method
+const parseData = JSON.parse(localCartData);
+if(!Array.isArray(parseData)) return [];
+return parseData;
 };
+
+
+
 
 const initialState ={
     // cart:[],
